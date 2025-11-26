@@ -214,3 +214,49 @@ html {
         padding: 20px;
     }
 }
+
+/* --- Feature Boxes Styling --- */
+
+/* Container for the 3 boxes */
+.features-container {
+    max-width: 1000px; /* Wider than the hero section to fit 3 boxes */
+    margin: 20px auto;
+    padding: 0;
+    background-color: transparent; /* No background for the container itself */
+    box-shadow: none;
+    backdrop-filter: none;
+    display: flex;
+    flex-wrap: wrap; /* Allows boxes to stack on mobile */
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Individual Box Style */
+.feature-box {
+    flex: 1 1 300px; /* Grow to fill space, but at least 300px wide */
+    background-color: var(--bg-darker);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    backdrop-filter: blur(5px);
+    border-top: 3px solid var(--accent); /* Adds a color strip to top of each card */
+    text-align: left;
+    transition: transform 0.2s;
+}
+
+.feature-box:hover {
+    transform: translateY(-5px); /* Moves up slightly when hovered */
+}
+
+.feature-box h3 {
+    margin-top: 0;
+    font-size: 1.4rem;
+    color: var(--accent);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.feature-box p {
+    font-size: 0.95rem;
+    color: #dcddde;
+    margin-bottom: 0;
+}
