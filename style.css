@@ -1,29 +1,38 @@
-/* Dark Mode Discord-like Theme */
+/* Dark Mode Discord-like Theme with Background Image */
 :root {
-    --bg-dark: #2c2f33;      /* Discord Dark Gray */
-    --bg-darker: #23272a;    /* Discord Darker Gray (Nav/Blocks) */
+    /* Colors */
+    --bg-darker: rgba(35, 39, 42, 0.95); /* Dark gray with slight transparency for readability */
     --accent: #7289da;       /* Discord Blurple */
     --text-main: #ffffff;
-    --text-muted: #99aab5;
+    --text-muted: #b9bbbe;
 }
 
 body {
-    background-color: var(--bg-dark);
+    /* --- New Background Settings --- */
+    background-image: url('background.png'); /* Uses the image you uploaded */
+    background-size: cover;                  /* Scales image to cover entire screen */
+    background-position: center top;         /* Centers image and aligns to top */
+    background-attachment: fixed;            /* Background stays still while scrolling */
+    background-repeat: no-repeat;            /* Prevents repeating */
+    /* ------------------------------- */
+    
     color: var(--text-main);
     font-family: 'gg sans', 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    min-height: 100vh; /* Ensures body is at least full screen height */
 }
 
 /* Navigation */
 nav {
-    background-color: var(--bg-darker);
+    background-color: var(--bg-darker); /* Semi-transparent background */
     padding: 1rem 2rem;
     position: sticky;
     top: 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
     z-index: 1000;
+    backdrop-filter: blur(5px); /* Adds a slight blur behind nav for cool effect */
 }
 
 .nav-container {
@@ -67,9 +76,10 @@ section {
     max-width: 800px;
     margin: 40px auto;
     padding: 40px;
-    background-color: var(--bg-darker);
+    background-color: var(--bg-darker); /* Semi-transparent background */
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5); /* Stronger shadow to pop out from bg */
+    backdrop-filter: blur(5px); /* Slight blur behind content */
 }
 
 /* Hero Section (Welcome) */
@@ -103,7 +113,7 @@ h4 {
 }
 
 p {
-    color: #dcddde; /* Slightly softer white for reading */
+    color: #dcddde;
     margin-bottom: 1rem;
 }
 
@@ -120,9 +130,9 @@ strong {
     color: white;
 }
 
-/* Code Snippets (for emails/commands) */
+/* Code Snippets */
 code {
-    background-color: #202225;
+    background-color: rgba(32, 34, 37, 0.8);
     padding: 2px 6px;
     border-radius: 4px;
     font-family: 'Consolas', 'Courier New', monospace;
@@ -142,18 +152,56 @@ section a:hover {
 
 footer {
     text-align: center;
-    padding: 40px 20px;
+    padding: 30px 20px;
     font-size: 0.85rem;
     color: var(--text-muted);
-    background-color: #202225;
+    background-color: var(--bg-darker); /* Semi-transparent background */
     margin-top: 50px;
+    backdrop-filter: blur(5px);
 }
 
 /* Smooth Scroll */
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 80px; /* Offsets scroll so nav doesn't hide titles */
+    scroll-padding-top: 80px;
 }
+
+/* --- Hero Styles (Logo & Buttons) --- */
+
+.hero-logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 20px 0;
+    border: 3px solid var(--accent);
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.2s, opacity 0.2s;
+    color: white !important;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.invite-btn { background-color: var(--accent); }
+.support-btn { background-color: #4f545c; }
 
 /* Mobile Responsiveness */
 @media (max-width: 600px) {
@@ -161,58 +209,8 @@ html {
         flex-direction: column;
         gap: 15px;
     }
-    
     section {
         margin: 20px;
         padding: 20px;
     }
-}
-
-/* --- New Hero Styles (Logo & Buttons) --- */
-
-/* Circular Profile Picture */
-.hero-logo {
-    width: 120px;           /* Size of the image */
-    height: 120px;
-    border-radius: 50%;     /* This makes it a perfect circle */
-    margin: 20px 0;         /* Spacing above and below */
-    border: 3px solid var(--accent); /* Optional: Adds a border color */
-    object-fit: cover;      /* Ensures image doesn't stretch */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-
-/* Button Container */
-.hero-buttons {
-    display: flex;
-    gap: 15px;              /* Space between buttons */
-    justify-content: center;
-    margin-top: 25px;
-    flex-wrap: wrap;        /* Keeps buttons nice on mobile */
-}
-
-/* General Button Style */
-.btn {
-    padding: 12px 24px;
-    border-radius: 5px;
-    font-weight: bold;
-    text-decoration: none;
-    transition: transform 0.2s, opacity 0.2s;
-    color: white !important; /* Force text to be white */
-}
-
-/* Hover Effect */
-.btn:hover {
-    transform: translateY(-2px); /* Slight lift up */
-    opacity: 0.9;
-    text-decoration: none;
-}
-
-/* Invite Button (Blurple) */
-.invite-btn {
-    background-color: var(--accent);
-}
-
-/* Support Button (Gray) */
-.support-btn {
-    background-color: #4f545c; 
 }
