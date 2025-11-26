@@ -167,3 +167,52 @@ html {
         padding: 20px;
     }
 }
+
+/* --- New Hero Styles (Logo & Buttons) --- */
+
+/* Circular Profile Picture */
+.hero-logo {
+    width: 120px;           /* Size of the image */
+    height: 120px;
+    border-radius: 50%;     /* This makes it a perfect circle */
+    margin: 20px 0;         /* Spacing above and below */
+    border: 3px solid var(--accent); /* Optional: Adds a border color */
+    object-fit: cover;      /* Ensures image doesn't stretch */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Button Container */
+.hero-buttons {
+    display: flex;
+    gap: 15px;              /* Space between buttons */
+    justify-content: center;
+    margin-top: 25px;
+    flex-wrap: wrap;        /* Keeps buttons nice on mobile */
+}
+
+/* General Button Style */
+.btn {
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.2s, opacity 0.2s;
+    color: white !important; /* Force text to be white */
+}
+
+/* Hover Effect */
+.btn:hover {
+    transform: translateY(-2px); /* Slight lift up */
+    opacity: 0.9;
+    text-decoration: none;
+}
+
+/* Invite Button (Blurple) */
+.invite-btn {
+    background-color: var(--accent);
+}
+
+/* Support Button (Gray) */
+.support-btn {
+    background-color: #4f545c; 
+}
