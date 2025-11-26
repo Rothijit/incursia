@@ -1,0 +1,169 @@
+/* Dark Mode Discord-like Theme */
+:root {
+    --bg-dark: #2c2f33;      /* Discord Dark Gray */
+    --bg-darker: #23272a;    /* Discord Darker Gray (Nav/Blocks) */
+    --accent: #7289da;       /* Discord Blurple */
+    --text-main: #ffffff;
+    --text-muted: #99aab5;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'gg sans', 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Navigation */
+nav {
+    background-color: var(--bg-darker);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: var(--text-main);
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+/* Main Layout */
+section {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 40px;
+    background-color: var(--bg-darker);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Hero Section (Welcome) */
+.hero {
+    text-align: center;
+    border-top: 4px solid var(--accent);
+}
+
+.hero h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+/* Typography & Content */
+h2, h3, h4 {
+    color: var(--accent);
+    margin-top: 1.5em;
+}
+
+h3 {
+    border-bottom: 2px solid #2c2f33;
+    padding-bottom: 10px;
+    font-size: 1.8rem;
+    margin-top: 0;
+}
+
+h4 {
+    color: var(--text-main);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    color: #dcddde; /* Slightly softer white for reading */
+    margin-bottom: 1rem;
+}
+
+ul {
+    margin-left: 20px;
+    color: #dcddde;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+strong {
+    color: white;
+}
+
+/* Code Snippets (for emails/commands) */
+code {
+    background-color: #202225;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Consolas', 'Courier New', monospace;
+    color: var(--accent);
+    font-size: 0.9em;
+}
+
+/* Links inside text */
+section a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+section a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    background-color: #202225;
+    margin-top: 50px;
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Offsets scroll so nav doesn't hide titles */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    section {
+        margin: 20px;
+        padding: 20px;
+    }
+}
